@@ -38,7 +38,7 @@ public class ProductService {
             product.setName(updatedProduct.getName());
             product.setDescription(updatedProduct.getDescription());
             product.setPrice(updatedProduct.getPrice());
-            product.setStock(updatedProduct.getStock()); // ✅ AGREGADO
+            product.setStock(updatedProduct.getStock()); 
             return productRepository.save(product);
         }).orElseThrow(() -> new RuntimeException("Product not found with id: " + id));
     }

@@ -8,6 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+// Crear usuario ADMIN por defecto
 @Configuration
 @RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
@@ -17,7 +18,6 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Crear usuario ADMIN por defecto
         if (userRepository.findByUsername("admin").isEmpty()) {
             User admin = User.builder()
                     .username("admin")

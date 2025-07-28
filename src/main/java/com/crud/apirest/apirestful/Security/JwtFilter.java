@@ -33,7 +33,6 @@ public class JwtFilter extends OncePerRequestFilter {
 
         String path = request.getServletPath();
         if (path.matches("^/api/auth(/.*)?$")) {
-            System.out.println("Saltando filtro para: " + path);
             filterChain.doFilter(request, response);
             return;
         }

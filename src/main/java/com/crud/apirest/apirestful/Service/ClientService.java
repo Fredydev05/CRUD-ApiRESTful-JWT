@@ -37,7 +37,7 @@ public class ClientService {
         return clientRepository.findById(id).map(client -> {
             client.setName(updatedClient.getName());
             client.setEmail(updatedClient.getEmail());
-            client.setPhone(updatedClient.getPhone()); // ✅ AGREGADO
+            client.setPhone(updatedClient.getPhone());
             return clientRepository.save(client);
         }).orElseThrow(() -> new RuntimeException("Client not found with id: " + id));
     }
